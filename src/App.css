@@ -1,0 +1,19 @@
+.App {
+  display: flex;
+  height: 100vh;
+}
+
+.division {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.division:first-child {
+  width: 65%; /* Carrusel ocupa el 65% del ancho */
+}
+
+.division:last-child {
+  width: 35%; /* Login ocupa el 35% */
+}
