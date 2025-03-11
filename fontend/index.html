@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Haskell</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        #saludo {
+            font-size: 2em;
+            color: #4CAF50;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1em;
+            margin-top: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Frontend Haskell</h1>
+    <p id="saludo">Haz clic para obtener el saludo desde Haskell.</p>
+    <button onclick="obtenerSaludo()">Obtener Saludo</button>
+
+    <script>
+        function obtenerSaludo() {
+            fetch('http://localhost:8080/saludo')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('saludo').textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error al obtener el saludo:', error);
+                });
+        }
+    </script>
+
+</body>
+</html>
